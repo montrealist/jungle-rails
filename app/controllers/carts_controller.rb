@@ -1,6 +1,9 @@
 class CartsController < ApplicationController
 
   def show
+    # debugger
+    # puts enhanced_cart.inspect
+    # puts enhanced_cart.length
   end
 
   def add_item
