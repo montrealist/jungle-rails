@@ -6,10 +6,14 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    # puts 'new!';
+    # puts @product.inspect
   end
 
   def create
     @product = Product.new(product_params)
+    # puts 'prod!'
+    # puts @product
 
     if @product.save
       redirect_to [:admin, :products], notice: 'Product created!'
@@ -27,6 +31,8 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
+    # puts 'product_params'
+    # puts params
     params.require(:product).permit(
       :name,
       :description,
