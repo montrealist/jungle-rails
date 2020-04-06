@@ -1,0 +1,46 @@
+<div class="panel panel-default items">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th colspan="2">Product</th>
+      <th>Unit Price</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>
+    <%= image_tag product.image.tiny %>
+  </td>
+  <td>
+    <h4><%= product.name %></h4>
+    <br>
+    <p><%= product.description %></p>
+  </td>
+  <td>
+    <%= product.price %>
+  </td>
+  <td>
+    <%= button_to remove_item_cart_path(product_id: product.id), class: 'btn btn-xs btn-danger' do %> - <% end %>
+    <%= quantity %>
+    <%= button_to add_item_cart_path(product_id: product.id), class: 'btn btn-xs btn-success' do %> + <% end %>
+  </td>
+  <td>
+    <%= product.price * quantity %>
+  </td>
+</tr>
+
+  </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="4">
+        TOTAL:
+      </th>
+      <th>
+        subtotal here
+      </th>
+    </tr>
+  </tfoot>
+</table>
+</div>
