@@ -1,4 +1,5 @@
 require 'rails_helper'
+# require 'images'
 
 RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
 
@@ -11,7 +12,8 @@ RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
         name:  Faker::Hipster.sentence(3),
         description: Faker::Hipster.paragraph(4),
         quantity: 10,
-        price: 64.99
+        price: 64.99,
+        image: open_asset("apparel#{n+1}.jpg"),
       )
     end
   end
