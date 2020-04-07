@@ -6,6 +6,9 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  # https://stackoverflow.com/questions/35959490/rails-server-doesnt-see-code-changes-and-reload-files
+  config.reload_classes_only_on_change = false
+
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -40,4 +43,6 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.web_console.whitelisted_ips = ['10.0.2.0/24']
+
+  # config.file_watcher = ActiveSupport::FileUpdateChecker
 end
